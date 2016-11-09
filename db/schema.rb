@@ -11,20 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160226182941) do
+ActiveRecord::Schema.define(version: 20161109002443) do
 
   create_table "makes", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "webmotors_id"
+    t.string   "name",         null: false
+    t.integer  "webmotors_id", null: false
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
 
+  add_index "makes", ["webmotors_id"], name: "index_makes_on_webmotors_id", unique: true
+
   create_table "models", force: :cascade do |t|
-    t.integer  "make_id"
-    t.string   "name"
+    t.integer  "make_id",    null: false
+    t.string   "name",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "models", ["make_id"], name: "index_models_on_make_id"
 
 end
