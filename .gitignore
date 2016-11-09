@@ -15,9 +15,11 @@
 /log/*
 !/log/.keep
 /tmp
+.byebug_history
 
 # Ignore local ruby-version
 .ruby-version
+.rspec
 
 # Ignore config files
 config/database.yml
