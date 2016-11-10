@@ -1,15 +1,19 @@
-# Teste Ruby para Candidatos
+# Teste Ruby
 
-## Resumo
+Tem como objetivo se alimentar da API do Webmotors e listar marcas e modelos de carros
 
-O objetivo da aplicação é consultar marcas e modelos de carros usando a API do WebMotors.
+## Setup
 
-## Objetivo
+```console
+# Configure a aplicação
+bin/setup
 
-1. Faça um fork do projeto;
-2. Execute o rails server;
-3. Verifique o funcionamento da aplicação;
-4. Abra o código e faça uma análise para uma melhor compreensão;
-5. Utilize seu conhecimento em Ruby/Rails e Orientação a Objetos para fazer todas as possíveis mudanças que julgar pertinente: classes, métodos, variáveis e boas práticas.
+# Popular/Atualizar banco de dados
+bin/rake webmotors_static_data:all
+```
 
-Obs: todo o cuidado e rigor adicional serão contados como pontos positivos.
+### Considerações
+
+Não sei a frequência de atualização dos dados da Webmotors, mas acredito que não seja constante. Por esse motivo, decidi os dados deveriam ser tratados como "estáticos" e populados/atualizados sob demanda.
+
+No melhor dos ambientes, deveria ser agendado um cron para executar a tarefa de atualizar os dados de marcas e modelos em um determinado intervalo.
