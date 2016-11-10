@@ -1,0 +1,13 @@
+<header>
+  <h1>Marcas</h1>
+</header>
+
+<div class="row">
+  <div class="col-md-6">
+    <ul class="makes-box list-unstyled">
+      <% makes.each do |make| %>
+        <li><%= link_to make.name, make_models_path(make) %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>

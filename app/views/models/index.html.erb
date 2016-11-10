@@ -1,9 +1,15 @@
-<% make = Make.where(webmotors_id: params[:webmotors_make_id])[0] %>
-<% models = Model.where(make_id: make.id) %>
+<header>
+  <h1><%= make.name %></h1>
 
-<a href="/"><< Voltar</a>
-<ul>
-  <% models.each do |model| %>
-    <li><%= model.name %></li>
-  <% end %>
-</ul>
+  <%= link_to '< Voltar', root_path, class: 'btn btn-xs btn-default' %>
+</header>
+
+<div class="row">
+  <div class="col-md-6">
+    <ul class="models-box">
+      <% models.each do |model| %>
+        <li><%= model.name %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>

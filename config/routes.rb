@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  get "/" => "home#index"
+  root 'makes#index'
 
-  get "/models" => "models#index"
+  resources :makes, only: [] do
+    resources :models, only: :index
+  end
 end

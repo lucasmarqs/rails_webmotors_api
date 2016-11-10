@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+ul.makes-box,
+ul.models-box {
+  max-height: 400px;
+  overflow-y: auto;
+  margin: 10px 0;
+}
