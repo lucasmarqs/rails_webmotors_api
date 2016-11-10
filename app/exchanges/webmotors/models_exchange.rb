@@ -20,7 +20,7 @@ module Webmotors
     private
 
     def fetch
-      @fetch ||= self.class.post("/carro/marcas")
+      @fetch ||= self.class.post("/carro/modelos", @options)
     end
   end
 end
