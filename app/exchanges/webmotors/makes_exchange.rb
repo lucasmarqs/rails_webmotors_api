@@ -11,14 +11,6 @@ module Webmotors
       makes.each &:save
     end
 
-    def data
-      fetch.parsed_response
-    end
-
-    def request
-      fetch.request
-    end
-
     private
 
     def fetch
